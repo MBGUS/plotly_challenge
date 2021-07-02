@@ -2,7 +2,7 @@
 function getPlot(id) {
     
     // Read JSON file & get the data
-    d3.json("data/samples.json").then((data)=> {
+    d3.json("samples.json").then((data)=> {
         console.log(data)
 
         var wfreq = data.metadata.map(d => d.wfreq)
@@ -83,7 +83,7 @@ function getPlot(id) {
         // Create the bubble plot
         Plotly.newPlot("bubble", data1, layout); 
 
-        // Create pie chart
+        // Create Pie chart - Instead of Gauge Plot
         var tracePie = {
             labels: idOtu,
             values:sampleValues,
@@ -101,7 +101,7 @@ function getPlot(id) {
 function getInfo(id) {
     
     // Read JSON file & get the data
-    d3.json("data/samples.json").then((data)=> {
+    d3.json("samples.json").then((data)=> {
         
         // get the metadata info for the demographic panel
         var metadata = data.metadata;
@@ -135,7 +135,7 @@ function init() {
     var dropdown = d3.select("#selDataset");        // Select the user input field        
 
     // Read the data 
-    d3.json("data/samples.json").then((data)=> {
+    d3.json("samples.json").then((data)=> {
         console.log(data)
 
         // Get the id data to the dropdwown menu
